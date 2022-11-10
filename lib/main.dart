@@ -35,8 +35,16 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
         title: Text("Tugas Mobile II"),
       ),
       body: Center(
-        child: Text("Tab Index yang aktif : $_selectedNavbar",
-            style: TextStyle(fontSize: 16)),
+        child: IndexedStack(
+          index: _selectedNavbar,
+          children: const [
+            HomePage(),
+            FormPage(),
+            OrderPage(),
+            InboxPage(),
+            AkunPage(),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -68,5 +76,46 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
         onTap: _changeSelectedNavBar,
       ),
     );
+  }
+}
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text('Home'));
+  }
+}
+class FormPage extends StatelessWidget {
+  const FormPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text('Untuk Form'));
+  }
+}
+class OrderPage extends StatelessWidget {
+  const OrderPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text('untuk Order'));
+  }
+}
+class InboxPage extends StatelessWidget {
+  const InboxPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text('Inbox'));
+  }
+}
+
+class AkunPage extends StatelessWidget {
+  const AkunPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text('Setting Akun'));
   }
 }
