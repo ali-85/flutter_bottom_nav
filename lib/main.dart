@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'settings.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,7 +43,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
             FormPage(),
             OrderPage(),
             InboxPage(),
-            AkunPage(),
+            MySettings(),
           ],
         ),
       ),
